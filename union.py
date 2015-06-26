@@ -12,19 +12,10 @@ Created on Fri Jun 26 16:12:50 2015
 """
 
 
-# helper procedure
-def find_element(p, t):
-    if t in p:
-        return p.index(t)
-    else:
-        return -1
-
-
 def union(a, b):
     for e in b:
-        if find_element(a, e) == -1:
+        if e not in a:
             a.append(e)
-    return a
 
 # test    
 a = [1, 2, 3]
