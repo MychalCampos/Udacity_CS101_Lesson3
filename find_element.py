@@ -15,15 +15,12 @@ Created on Fri Jun 26 13:57:45 2015
 
 
 def find_element(p, t):
-    i = - 1
-    m = 1
+    i = 0
     for e in p:
         if e == t:
-            i = i + m
-            break
-        else:
-            m = m + 1
-    return i
+            return i
+        i = i + 1
+    return i 
 
 
 def test():
