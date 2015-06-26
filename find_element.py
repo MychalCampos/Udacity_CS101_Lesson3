@@ -20,7 +20,17 @@ def find_element(p, t):
         if e == t:
             return i
         i = i + 1
-    return i 
+    return -1
+
+
+# # using while loop
+# def find_element(p, t):
+#    i = 0
+#    while i < len(p):
+#        if p[i] == t:
+#            return i
+#        i = i + 1
+#    return -1
 
 
 def test():
