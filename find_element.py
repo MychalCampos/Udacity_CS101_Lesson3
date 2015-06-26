@@ -20,6 +20,7 @@ def find_element(p, t):
     for e in p:
         if e == t:
             i = i + m
+            break
         else:
             m = m + 1
     return i
@@ -28,6 +29,10 @@ def find_element(p, t):
 def test():
     assert find_element([1, 2, 3], 3) == 2
     assert find_element(['alpha', 'beta'], 'gamma') == -1
+    assert find_element(['CS101', 'CS373', 'CS212', 'CS101', 'CS373',
+                         'CS262'], 'CS101') == 0
     print "All Test Cases Passed!"
 
 test()
+
+
