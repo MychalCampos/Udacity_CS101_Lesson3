@@ -7,10 +7,10 @@ Using simple for loop to sum all elements of a list
 
 
 def sum_list(p):
-    total = 0
+    result = 0
     for i in p:
-        total = total + i
-    return total
+        result = result + i
+    return result
 
 
 # test cases
