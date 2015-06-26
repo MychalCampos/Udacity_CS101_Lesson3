@@ -14,13 +14,29 @@ Created on Fri Jun 26 13:57:45 2015
 """
 
 
+# using index function
 def find_element(p, t):
-    i = 0
-    for e in p:
-        if e == t:
-            return i
-        i = i + 1
-    return -1
+    if t in p:
+        return p.index(t)
+    else:
+        return -1
+
+
+# # using index function and 'not in'
+# def find_element(p, t):
+#    if t not in p:
+#        return -1
+#    return p.index(t)
+
+
+# # using for loop
+# def find_element(p, t):
+#    i = 0
+#    for e in p:
+#        if e == t:
+#            return i
+#        i = i + 1
+#    return -1
 
 
 # # using while loop
@@ -41,5 +57,3 @@ def test():
     print "All Test Cases Passed!"
 
 test()
-
-
