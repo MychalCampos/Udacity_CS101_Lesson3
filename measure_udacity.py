@@ -15,8 +15,8 @@ Created on Fri Jun 26 13:35:29 2015
 
 def measure_udacity(p):
     count = 0
-    for i in p:
-        if i.find('U') != -1:
+    for e in p:
+        if e.find('U') != -1:
             count = count + 1
     return count
 
