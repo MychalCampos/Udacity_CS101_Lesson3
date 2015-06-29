@@ -125,6 +125,7 @@ def get_all_links(page):
 
 
 # cleaner and makes much more sense
+# courtesy of Udacity instructors
 def crawl_web(seed,max_depth):    
     tocrawl = [seed]
     crawled = []
