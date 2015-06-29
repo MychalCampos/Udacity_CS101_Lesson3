@@ -123,6 +123,7 @@ def crawl_web(seed, max_depth):
         m = m + 1
     return crawled
 
+# tests
 print crawl_web("http://www.udacity.com/cs101x/index.html", 0)
 print crawl_web("http://www.udacity.com/cs101x/index.html", 1)
 print crawl_web("http://www.udacity.com/cs101x/index.html", 50)
