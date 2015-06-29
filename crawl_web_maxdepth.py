@@ -104,23 +104,40 @@ def get_all_links(page):
     return links
 
 
-# first attempt (a bit of a hack but correct)
-def crawl_web(seed, max_depth):
+# # first attempt (a bit of a hack but seems to be correct)
+# def crawl_web(seed, max_depth):
+#    tocrawl = [seed]
+#    pages = [seed]
+#    crawled = []
+#    m = 0
+#    while m <= max_depth:
+#        for i in tocrawl:
+#            oldlen = len(tocrawl)
+#            if i not in crawled:
+#                newpages = get_all_links(get_page(i))
+#                union(pages, newpages)
+#                crawled.append(i)
+#        # returns too many pages remaining to be crawled sometimes but the
+#        # function still works as we have "i not in crawled" above
+#        tocrawl = pages[oldlen:]
+#        m = m + 1
+#    return crawled
+
+
+# cleaner and makes much more sense
+def crawl_web(seed,max_depth):    
     tocrawl = [seed]
-    pages = [seed]
     crawled = []
-    m = 0
-    while m <= max_depth:
-        for i in tocrawl:
-            oldlen = len(tocrawl)
-            if i not in crawled:
-                newpages = get_all_links(get_page(i))
-                union(pages, newpages)
-                crawled.append(i)
-        # returns too many pages remaining to be crawled sometimes but the
-        # function still works as we have "i not in crawled" above
-        tocrawl = pages[oldlen:]
-        m = m + 1
+    next_depth = []
+    depth = 0
+    while tocrawl and depth <= max_depth:
+        page = tocrawl.pop()
+        if page not in crawled:
+            union(next_depth, get_all_links(get_page(page)))
+            crawled.append(page)
+        if not tocrawl:
+            tocrawl, next_depth = next_depth, []
+            depth = depth + 1
     return crawled
 
 print crawl_web("http://www.udacity.com/cs101x/index.html", 0)
