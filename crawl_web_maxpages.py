@@ -93,6 +93,7 @@ def get_all_links(page):
 
 
 # better and more efficient
+# instructor's solution
 def crawl_web(seed, max_pages):
     tocrawl = [seed]
     crawled = []
